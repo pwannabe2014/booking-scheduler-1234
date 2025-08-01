@@ -108,7 +108,7 @@ def test_예약완료시_SMS는_무조건_발송(booking_scheduler_with_sms_mock
 
     booking_scheduler.add_schedule(schedule)
 
-    assert sms_mock.send_called
+    sms_mock.send.assert_called()
 
 
 def test_이메일이_없는_경우에는_이메일_미발송(booking_scheduler_with_mail_mock, customer):
