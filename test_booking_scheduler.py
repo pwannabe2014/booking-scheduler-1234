@@ -5,7 +5,6 @@ import pytest
 from schedule import Customer, Schedule
 from communication import SmsSender, MailSender
 from booking_scheduler import BookingScheduler
-from test_communication import TestableSmsSender, TestableMailSender
 
 UNDER_CAPACITY = 1
 CAPACITY_PER_HOUR = 3
