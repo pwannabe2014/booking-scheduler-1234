@@ -20,6 +20,20 @@ class TestableBookingScheduler(BookingScheduler):
         return datetime.strptime(self._date_time, "%Y/%m/%d %H:%M")
 
 
+@pytest.fixture
+def customer(mocker):
+    customer = mocker.Mock()
+    customer.get_email.return_value = None
+    return customer
+
+
+@pytest.fixture
+def customer_with_mail(mocker):
+    customer = mocker.Mock()
+    customer.get_email.return_value = 'test@test.com'
+    return customer
+
+
 NOT_ON_THE_HOUR = datetime.strptime("2021/03/26 09:05", "%Y/%m/%d %H:%M")
 ON_THE_HOUR = datetime.strptime("2021/03/26 09:00", "%Y/%m/%d %H:%M")
 CUSTOMER = Customer("Fake name", "010-1234-5678")
