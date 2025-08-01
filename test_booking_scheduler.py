@@ -36,8 +36,6 @@ def customer_with_mail(mocker):
 
 NOT_ON_THE_HOUR = datetime.strptime("2021/03/26 09:05", "%Y/%m/%d %H:%M")
 ON_THE_HOUR = datetime.strptime("2021/03/26 09:00", "%Y/%m/%d %H:%M")
-CUSTOMER = Customer("Fake name", "010-1234-5678")
-CUSTOMER_WITH_MAIL = Customer("Fake name", "010-1234-5678", "test@test.com")
 
 
 @pytest.fixture
